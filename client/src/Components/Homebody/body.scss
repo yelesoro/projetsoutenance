@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap');
+
+:root{
+    --primaryColor: hsl(94, 55%, 56%);
+    --hoverColor: hsl(93, 75%, 76%);
+    --paleGreen: hsl(94, 55%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor:#192a56 ;
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(113, 11%, 85%);
+    --inputColor: hsl(330, 12%, 97%);
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+
+    /*Font and typography*/
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1rem;
+    --normalFontSize: .938rem;
+    --smallFontSize: .813rem;
+    --smallestFontSize:.75rem;
+
+
+}
+
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+#divid{
+    width: 100%;
+    display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+
+}
+
+.about .text{
+    text-align: center;
+}
+
+.about .text h3{
+    color: var(--primaryColor);
+    font-size: 3rem;
+}
+
+.about .text h1{
+    color: var(--blackColor);
+    font-size: 2rem;
+}
+
+.about .row{
+     display: flex;
+     flex-wrap: wrap;
+     gap: 1.5rem;
+     align-items: center;
+
+}
+
+.about .row .image{
+    flex: 1;
+    padding-left: 15rem;
+
+}
+.about .row .image img{
+    width:60%;
+}
+
+.about .row .content{
+    flex: 1;
+
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color: var(--primaryColor);
+}
+// #image1{
+//     width: 160px;
+//     height: 160px;
+    
+// }
+
+// .about{
+//     position: relative;
+//     padding-left:30%;
+
+// }
+
+// #learn{
+//     padding: .8rem;
+//     margin: 3rem;
+//     box-shadow: var(--box-shadow);
+//     border: 20%;
+//     background-color: var(--blackColor);
+//     font-size: 1.5rem;
+// }
+
+// #learn:hover{
+//     background: var(--primaryColor);
+//     color: #fff;
+//     transform: rotate(360deg);
+// }
+
+// .about1{
+//     text-align: center;
+// }
+
+// .about1 .about .row{
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 1.5rem;
+//     align-items: center;
+// }
+
+// .about1 .about .row .image{
+//     flex: 1 1 45rem;
+// }
+
+// .about1 .about .row .image img{
+//     width: 100%
+
+// }
+
+// .about1 .about .row .content{
+//     flex: 1 1 5rem;
+// }
+
+// .about .row .content h3{
+//     columns: var(--blackColor);
+//     font-size: 4rem;
+//      padding: .5rem 0;
+// }
+
+// .about .row .content p{
+//     columns: var(--light-color) ;
+//     font-size: 1.5rem;
+//     padding: .5rem 0;
+//     line-height: 2;
+// }
+

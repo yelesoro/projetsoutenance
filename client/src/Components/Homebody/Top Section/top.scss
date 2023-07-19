@@ -1,0 +1,174 @@
+:root{
+    --primaryColor: hsl(94, 55%, 56%);
+    --hoverColor: hsl(93, 75%, 76%);
+    --paleGreen: hsl(94, 55%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor:#192a56 ;
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(0, 0%, 91%);
+    --inputColor: hsl(330, 12%, 97%);
+
+    /*Font and typography*/
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1rem;
+    --h3FontSize: .5rem
+    --normalFontSize: .938rem;
+    --smallFontSize: .813rem;
+    --smallestFontSize:.75rem;
+
+
+}
+
+
+.topSection{
+    width: 100%;
+    margin-top: 7.5rem;
+    margin-left: 10rem;
+    
+    .cardSection{
+        margin-top: 3rem;
+        gap: 1rem;
+
+        .rightCard{
+            position: relative;
+            flex-basis: 70%;
+            height: 200px;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin:auto; 
+            padding: 2rem;
+            border-radius: 1rem;
+            overflow: hidden;
+
+            .videoDiv{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                video{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;   
+                }
+
+
+            }
+            h1, p, .btn{
+                z-index: 100;
+
+            }
+
+            h1{
+                font-size: 3rem;
+                color: var(--whiteColor);
+                font-weight: 800;
+            }
+
+            p{
+                padding: 1rem;
+                color: var(--paleGreen);
+                font-weight: 500;
+                font-size: 2rem;
+            }
+
+            .buttons{
+                gap: 1rem;
+
+                .btn{
+                    box-sizing: none;
+                    padding: .8rem 1.5rem;
+                    color: var(--primaryColor);
+                    border:2px solid transparent;
+                }
+                .transparent{
+                    background: none;
+                    border: 2px solid var(--paleGreen);
+                    color: var(--paleGreen);
+
+                    &:hover{
+                        background: var(--paleGreen);
+                        color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+        .leftCard{
+            flex-basis:50% ;
+            .main{
+                position: relative;
+                padding: 1rem;
+                height: 200px;
+                border-radius: 1rem;
+                justify-content: space-between;
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: var(--paleGreen);
+                    left: 0;
+                    bottom: 0;
+                    border-radius: 1rem ;
+                }
+
+                .textDiv{
+                    z-index: 100;
+
+                    h1{
+                        font-size: var(--h1FontSize);
+                        padding-bottom: 1rem;
+                        color: var(--blackColor);
+                    }
+
+                    .flex{
+                        gap: 1.5rem;
+                        font-weight: 500;
+                        color: var(--blackColor);
+
+                        small{
+                            font-size: 1.3rem;
+                            display: block;
+                            color: var(--primaryColor);
+                            font-weight: 500;
+                            padding: .5rem 0;
+                              
+                        }
+                    }
+
+                    .link{
+                        margin-top: .5rem;
+                        cursor: pointer;
+
+                        &:hover{
+                            color: var(--whiteColor);
+                            .icon{
+                                transform: translateX(10px);
+                                transition: .3s ease;
+                                background-color: var(--hoverColor);
+                            }
+                        }
+                    }
+                }
+
+                .imgDiv{
+                    transform: translateY(-20px);
+
+                    img{
+                        width: 200px;
+                    }
+                }
+            }
+               
+        }
+    }
+}
+.span1{
+    font-size: 1.5rem;
+}
