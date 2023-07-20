@@ -2,6 +2,7 @@ import './top.scss'
 import video from '../../../LoginAssets/video2.mp4'
 // import {BsQuestionCircle} from 'react-icons/bs'
 import legume from '../../../ImageProduits/legume.png'
+import { Link } from 'react-router-dom'
 // import patate from '../../../../ImageProduits/patate.jpg'
 // import orange from '../../../../ImageProduits/orangediarra.png'
 // import coton from '../../../../ImageProduits/cot.jpg'
@@ -42,9 +43,12 @@ const Top = () => {
                                 Ce mois <br /><small className='small1'>127 Produits</small>
                             </span>
                         </div>
+                        <Link to={'/produits'}>
                         <span className='flex link'>
                                 Aller sur les produits <BsArrowRightShort className='icon'/>
                         </span>
+                        </Link>
+                        
 
                     </div>
 

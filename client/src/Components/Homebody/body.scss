@@ -90,6 +90,51 @@ html{
     font-size: 3rem;
     color: var(--primaryColor);
 }
+
+
+.steps{
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding:1rem ;
+
+}
+
+.steps .box{
+    flex: 1 1 25rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.steps .box img{
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border:1rem solid #fff ;
+    box-shadow: var(--box-shadow);
+
+}
+
+.steps .box h3{
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: #333;
+    padding: 1rem 0;
+
+}
+
+.steps .box h3:hover{
+    background: var(--paleGreen);
+}
+.h3{
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.h3:hover{
+    color: var(--primaryColor);
+}
+
 // #image1{
 //     width: 160px;
 //     height: 160px;

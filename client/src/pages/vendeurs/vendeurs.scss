@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap');
+
+:root{
+    --primaryColor: hsl(94, 55%, 56%);
+    --hoverColor: hsl(93, 75%, 76%);
+    --paleGreen: hsl(94, 55%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor:#192a56 ;
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(113, 11%, 85%);
+    --inputColor: hsl(330, 12%, 97%);
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+
+    /*Font and typography*/
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1rem;
+    --normalFontSize: .938rem;
+    --smallFontSize: .813rem;
+    --smallestFontSize:.75rem;
+
+
+}
+
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+
+
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+
+img{
+    width: 150px;
+    height: 150px;
+}
+
+.tete{
+    width: 300px;
+}
+
+.review{
+    margin-top: 5rem;
+    margin-left: 30rem; margin-right: 10rem;
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+}
+
+.review .heading{
+    font-size: 3rem;
+}
+
+.review .heading:hover{
+    background: var(--paleGreen);
+}
+
+.review .heading span{
+    color: var(--primaryColor);
+}
+.review .heading span:hover{
+    color: var(--blackColor);
+}
+
+.review h1{
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review h1 span{
+    margin-left: 15px;
+    columns: var(--primaryColor);
+    
+}
+
+.review h1 span ::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--primaryColor);
+    position: relative;
+    bottom: 15px;
+    display: block;
+
+}
+
+.review .review_box{
+    width: 95%;
+    margin: 70px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.review .review_box .review_card{
+    width: 300px;
+    height: 405px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    padding: 8px 20px;
+    margin:0 8px ;
+}
+
+.review .review_box .review_card .review_profile{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    position: relative;
+    transition: 0.3s;
+
+}
+
+.review .review_box .review_card:hover .review_profile{
+    transform: translateY(-60px);
+}
+
+.review .review_box .review_card .review_profile img{
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 5px solid #cccccc;
+
+}
+
+.review .review_box .review_card .review_text{
+    text-align: center;
+}
+
+.review .review_box .review_card .review_text .name{
+    font-size: 25px;
+}
+
+.review .review_box .review_card:hover .review_text .name{
+    transform: translateY(-50px);
+
+}
+
+.review .review_box .review_card .review_text .review_icon{
+    color: var(--primaryColor);
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.review .review_box .review_card:hover .review_text .review_icon{
+    transform: translateY(-30px);
+}
+
+.review .review_box .review_card .review_text .review_social .i{
+    margin: 5px 1px;
+    font-size: 15px;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_text .review_social .i{
+    opacity: 1;
+    transform: translateY(-8px);
+}
+
+.review .review_box .review_card .review_text p{
+    text-align: center;
+    line-height: 18px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.review .review_box .review_card .review_text p span{
+    color: var(--primaryColor);
+    font-weight: 600;
+}
+
+.review .review_box .review_card:hover .review_text p{
+    margin-top: 5px;
+}
+
+.bigdiv{
+    display: flex;
+    flex-direction: row;
+}
+
+.fruit{
+    position: fixed;
+    margin-left: 3rem;
+    margin-top: 30rem;
+    margin-bottom: 30rem;
+    padding: 3rem;
+    background-color: var(--paleGreen);
+    border-radius: 50%;
+}
+.fruit:hover{
+    background-color: var(--hoverColor);
+    box-shadow: var(--box-shadow);
+    border-radius: 2px solid var(--blackColor);
+}
+.fruit img{
+    width: 15rem;
+    height: 15rem;
+    
+
+}
+
+.lien{
+    text-decoration: none;
+    color: black;
+}

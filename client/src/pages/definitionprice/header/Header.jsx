@@ -6,7 +6,7 @@ import './header.scss'
 import { useState } from "react";
 import {FaTrashAlt} from 'react-icons/fa'
 import {GiFruitBowl} from 'react-icons/gi'
-import logo from '../../LoginAssets/logo.png'
+import logo from '../../../LoginAssets/logo.png'
 
 const Header = () => {
     
@@ -25,11 +25,11 @@ const Header = () => {
             <header>
                 <Link to={'/register'} className="iconname" > <GiFruitBowl className="icon"/>AGROBLOC</Link>
                 <nav className="navbar">
-                    <Link className="link1">Accueil</Link>
-                    <Link className="link2">Produits</Link>
+                    <Link to={'/home'} className="link2">Accueil</Link>
+                    <Link className="link1">Produits</Link>
                     <Link className="link">Historiques</Link>
                     <Link className="link">Graphes</Link>
-                    {/* <Link className="link">review</Link> */}
+                    <Link className="link">Comptes</Link> 
                 </nav>
                  <div className="icons">
                     <div id = "search-btn"><FaSearch className = "icon" onClick={toggleSearch}/>   </div>
