@@ -27,7 +27,7 @@ const Header = () => {
                 <nav className="navbar">
                     <Link className="link1">Accueil</Link>
                     <Link to={'/produits'} className="link2">Produits</Link>
-                    <Link className="link">Historiques</Link>
+                    <Link className="link" to={'/historique'}>Historique</Link>
                     <Link className="link">Graphes</Link>
                     <Link className="link">Comptes</Link> 
                 </nav>
@@ -83,7 +83,7 @@ const Header = () => {
                         
                     </div>
 
-                    <Link>
+                    <Link to={'/panier'}>
                     <div className="plus">
                         <center><p>Voir plus</p></center>
 

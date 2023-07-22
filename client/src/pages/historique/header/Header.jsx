@@ -26,8 +26,8 @@ const Header = () => {
                 <Link to={'/register'} className="iconname" > <GiFruitBowl className="icon"/>AGROBLOC</Link>
                 <nav className="navbar">
                     <Link to={'/home'} className="link2">Accueil</Link>
-                    <Link className="link1">Produits</Link>
-                    <Link className="link">Historiques</Link>
+                    <Link className="link" to={'/produits'}>Produits</Link>
+                    <Link className="link1">Historiques</Link>
                     <Link className="link">Graphes</Link>
                     <Link className="link">Comptes</Link> 
                 </nav>

@@ -81,6 +81,7 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
 }
 
 .review h1 span{
@@ -109,9 +110,13 @@ img{
     gap: 1.5rem;
 }
 
+.review .review_box>div{
+    display: inline-block;
+}
+
 .review .review_box .review_card{
-    width: 300px;
-    height: 405px;
+    width: 450px;
+    height: 390px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     border-radius: 8px;
     padding: 8px 20px;
@@ -215,11 +220,18 @@ img{
 .fruit img{
     width: 15rem;
     height: 15rem;
-    
-
 }
 
 .lien{
     text-decoration: none;
     color: black;
+}
+
+.divpla{
+    width: 95%;
+    margin: 70px;
+    display: flex;
+    background-color: red;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }

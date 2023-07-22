@@ -6,7 +6,7 @@ import './header.scss'
 import { useState } from "react";
 import {FaTrashAlt} from 'react-icons/fa'
 import {GiFruitBowl} from 'react-icons/gi'
-import logo from '../../../ImageProduits/caco.png'
+import logo from '../../../LoginAssets/logo.png'
 
 const Header = () => {
     
@@ -27,15 +27,13 @@ const Header = () => {
                 <nav className="navbar">
                     <Link to={'/home'} className="link2">Accueil</Link>
                     <Link className="link1">Produits</Link>
-                    <Link className="link">Historiques</Link>
+                    <Link className="link" to={'/historique'}>Historique</Link>
                     <Link className="link">Graphes</Link>
                     <Link className="link">Comptes</Link> 
                 </nav>
                  <div className="icons">
                     <div id = "search-btn"><FaSearch className = "icon" onClick={toggleSearch}/>   </div>
-
-                    <div id = "cart-btn"><MdShoppingCart className="icon" onClick={togglepanier}/></div> 
-                      
+                      <div id = "cart-btn"><MdShoppingCart className="icon" onClick={togglepanier}/></div> 
                     <div id = "login-btn"><IoMdPerson className="icon"/></div> 
 {/* search part */}
                 </div> 
@@ -50,9 +48,35 @@ const Header = () => {
                         <FaTrashAlt className="icon"/>
                         <img src={logo} alt="image " />
                         <div className="content">
-                            <h3>Cacao</h3>
-                            <span className="price"></span><br /><br />
-                            <span className="quantity">Seller : Monsieur Kouakou</span>
+                            <h3>logo</h3>
+                            <span className="price"></span>
+                            <span className="quantity">qté: 1</span>
+
+                        </div>
+
+                        
+                    </div>
+
+                    <div className="box">
+                        <FaTrashAlt className="icon"/>
+                        <img src={logo} alt="image " />
+                        <div className="content">
+                            <h3>logo</h3>
+                            <span className="price"></span>
+                            <span className="quantity">qté: 1</span>
+
+                        </div>
+
+                        
+                    </div>
+
+                    <div className="box">
+                        <FaTrashAlt className="icon"/>
+                        <img src={logo} alt="image " />
+                        <div className="content">
+                            <h3>logo</h3>
+                            <span className="price"></span>
+                            <span className="quantity">qté: 1</span>
 
                         </div>
 

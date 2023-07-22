@@ -83,7 +83,7 @@ const Header = () => {
                         
                     </div>
 
-                    <Link>
+                    <Link to={'/panier'}>
                     <div className="plus">
                         <center><p>Voir plus</p></center>
 

@@ -64,6 +64,10 @@ html{
     font-size: 2rem;
 }
 
+.h3 span{
+    color: var();
+}
+
 .about .row{
      display: flex;
      flex-wrap: wrap;
@@ -130,9 +134,17 @@ html{
 .h3{
     font-weight: 600;
     font-size: 2.5rem;
+    width: 250px;
 }
+.h3 span{color: var(--primaryColor);}
 .h3:hover{
-    color: var(--primaryColor);
+    background: var(--hoverColor);
+
+}
+
+.h3:hover span{
+    color: var(--black);
+    background: var(--hoverColor);
 }
 
 // #image1{

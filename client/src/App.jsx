@@ -6,6 +6,10 @@ import Home from './pages/home/Home'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Vendeurs from './pages/vendeurs/Vendeurs'
 import PriceDefinition from './pages/definitionprice/PriceDefinition'
+import Panier from './pages/panier/Panier'
+import Historique from './pages/historique/Historique'
+
+
 
 const router = createBrowserRouter([
   {
@@ -34,6 +38,14 @@ const router = createBrowserRouter([
     path: '/priceDefinition',
     element: <div><PriceDefinition/></div>
   },
+  {
+    path: '/panier',
+    element: <div><Panier/></div>
+  },
+  {
+    path: '/historique',
+    element: <div><Historique/></div>
+  },
   
 
 
@@ -42,12 +54,18 @@ const router = createBrowserRouter([
 
 
 function App() {
+  
 
   return (
     <div>
+      {
+      
       <RouterProvider router={router}/>
+
+    }
       
     </div>
+  
    
   )
 }

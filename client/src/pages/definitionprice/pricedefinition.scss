@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap');
+
+:root{
+    --primaryColor: hsl(94, 55%, 56%);
+    --hoverColor: hsl(93, 75%, 76%);
+    --paleGreen: hsl(94, 55%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor:#192a56 ;
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(113, 11%, 85%);
+    --inputColor: hsl(330, 12%, 97%);
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+
+    /*Font and typography*/
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1rem;
+    --normalFontSize: .938rem;
+    --smallFontSize: .813rem;
+    --smallestFontSize:.75rem;
+
+
+}
+
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+.box-definition{
+    margin-top: 15rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    box-shadow: var(--box-shadow);
+    align-items: center;
+    display: flex;
+    height: 500px;
+
+}
+
+.box-definition .imagediv{
+    padding: 1rem;
+    background: var(--paleGreen);
+    margin-right: 2rem;
+    margin-left: 5rem;
+    border-radius: 50%;
+}
+
+.box-definition .imagediv:hover{
+    background: var(--primaryColor);
+    border: 2px solid var(--blackColor);
+}
+
+.box-definition .imagediv img{
+    width: 300px;
+    height: 300px;
+}
+.box-definition .textdiv{
+    flex: 1;
+}
+
+.box-definition .textdiv h1{
+    font-weight: 500;
+    font-size: 25px;
+    margin-top: -11rem;
+    margin-bottom: 5rem;
+}
+
+.box-definition .textdiv h2{
+    font-weight: 500;
+    font-size: 25px;
+
+}
+
+.box-definition .textdiv span{
+    color: var(--primaryColor);
+    font-size: 27px;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: .5rem;
+}
+
+.box-definition .textdiv span:hover{
+    background: var(--primaryColor);
+    color: var(--blackColor);
+    box-shadow: var(--box-shadow);
+
+}
+
+.box-definition .textdiv .quantity input{
+    border: var(--blackColor);
+    font-size: 20px;
+    color: black;
+
+}
+.box-definition .textdiv .quantity .inputdiv{
+    border:2px solid var(--blackColor);
+    border: gray;
+
+}
+
+.box-definition .textdiv .quantity label{
+    color: black;
+    font-size: 25px;
+
+}
+
+.resultat{
+    color: black;
+    font-size: 30px;
+}
+
+.boutton{
+    background-color: var(--hoverColor);
+    padding: 1rem;
+    margin-right: 3rem;
+    border-radius: 10px;
+}
+
+.boutton:hover{
+    background: var(--primaryColor);
+    border: 2px solid var(--blackColor);
+    box-shadow: var(--box-shadow);
+}
+
+.boutton span{
+    background: var(--hoverColor);
+    font-weight: 600;
+    font-size:20px;
+}
+
+.boutton span:hover{
+    background: var(--primaryColor);
+   
+
+}
+
+.boutton .i{
+    font-size: 20px;
+    background: var(--hoverColor);
+
+}
+
+.boutton i:hover{
+    background: var(--primaryColor);
+
+}
+
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup-content h2 {
+    margin-top: 0;
+    font-size: 25px;
+
+  }
+  
+  .popup-content button {
+    margin-top: 10px;
+  }
+
+  .popup-content p{
+    font-size: 15px;
+
+  }

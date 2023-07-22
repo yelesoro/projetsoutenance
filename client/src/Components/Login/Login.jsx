@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Login.scss'
-import video from '../../LoginAssets/video2.mp4'
+import video from '../../LoginAssets/video3.mp4'
 import logo from'../../LoginAssets/logo.png'
 import { Link, useNavigate, } from 'react-router-dom';
 import {FaUserShield} from 'react-icons/fa'
