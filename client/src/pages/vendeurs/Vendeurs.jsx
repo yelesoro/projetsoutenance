@@ -1,5 +1,4 @@
 import Header from "./header/Header";
-import vendeur from '../../LoginAssets/seller.jpeg';
 import './vendeurs.scss'
 import {AiTwotoneStar, AiOutlineStar} from 'react-icons/ai'
 import {BiSolidStarHalf} from 'react-icons/bi'
@@ -15,7 +14,7 @@ const Vendeurs = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        const apiUrl = 'http://localhost:3000/api/get';
+        const apiUrl = 'http://192.168.252.74:8082/planteur/viewPlanteur.php';
     
         // Appel à l'API avec Axios
         axios.get(apiUrl)
@@ -41,12 +40,13 @@ const Vendeurs = () => {
                     {data.map(item=>(
 
                     <div className="review_card" key={item.id}>
-                    <div className="review_profile"> <img src={vendeur} alt="" /></div>
+                    <div className="review_profile"> <img alt="" /></div>
 
                        
                     <Link className="lien" to={'/priceDefinition'} >
   <div className="review_text" key={item}>
-                            <h2 className="name">{item.nomEtud}</h2>
+                            <h2 className="name">{item.Nom_planteur}</h2>
+                            <h2 className="name">{item.Pren_planteur}</h2>
                             <div className="review_icon">
                                 <AiTwotoneStar className="i"/>
                                 <AiTwotoneStar className="i"/>
