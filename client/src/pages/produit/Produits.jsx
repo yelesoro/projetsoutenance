@@ -4,7 +4,6 @@ import Header from "./header/Header";
 // import axios from "axios";
  '../../ImageProduits/ananas.jpg'
  import { Link } from "react-router-dom";
-import ananas from '../../ImageProduits/caco.png'
 // import tomate from '../../ImageProduits/tomatediarra.png'
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -17,7 +16,7 @@ const Produits = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        const apiUrl = 'http://localhost:3000/api/get';
+        const apiUrl = 'http://192.168.252.192:7001/products';
     
         // Appel à l'API avec Axios
         axios.get(apiUrl)
@@ -42,9 +41,11 @@ const Produits = () => {
                 <div className="box-container">
                     {data.map(item=>(
                         <div className="box" key={item.id}>
-                        <img src={ananas} alt="image anans" />
+                        <center>
+                        <img src={`data:image/png;base64, ${item.productImage}`} alt="image anans" style={{display: 'block', width: "220px", height: '220px' }} />
+                        </center>
                         <div className="content">
-                            <h3>{item.nomEtud}</h3>
+                            <h3>{item.productName}</h3>
                             <p>Lorem ipsum dolor sit amet consectetur </p><br /><br />
                             <Link to={'/vendeurs'}><span className="btna">Acheter</span></Link>
                         </div>
