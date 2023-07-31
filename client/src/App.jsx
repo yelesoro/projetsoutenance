@@ -13,7 +13,7 @@ import Historique from './pages/historique/Historique'
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/login',
     element: <div><Login/></div>
   },
   {
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
  
   {
-    path: '/home',
+    path: '/',
     element: <div><Home/></div>
   },
 
