@@ -1,5 +1,5 @@
 import './top.scss'
-import video from '../../../LoginAssets/video3.mp4'
+import video from '../../../LoginAssets/video2.mp4'
 // import {BsQuestionCircle} from 'react-icons/bs'
 import legume from '../../../ImageProduits/legume.png'
 import { Link } from 'react-router-dom'

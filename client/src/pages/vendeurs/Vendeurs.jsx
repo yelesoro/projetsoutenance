@@ -1,86 +1,112 @@
-import Header from "./header/Header";
-import './vendeurs.scss'
-import {AiTwotoneStar, AiOutlineStar} from 'react-icons/ai'
-import {BiSolidStarHalf} from 'react-icons/bi'
-import {BsFacebook, BsWhatsapp} from 'react-icons/bs'
-import {BiSolidPhone} from 'react-icons/bi'
-import ananas from '../../ImageProduits/caco.png'
-import { Link } from "react-router-dom";
+
+
 import { useState, useEffect } from "react";
+import Header from "./header/Header";
+import { BsFacebook, BsWhatsapp } from 'react-icons/bs';
+import { BiSolidPhone } from 'react-icons/bi';
+import { useParams } from "react-router-dom";
+import './vendeurs.scss';
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { useVendor } from "../../contexts/VendorContext";
 
 
 const Vendeurs = () => {
-    const [data, setData] = useState([]);
+  const { vendorInfo, setVendorInfo } = useVendor();
+  const { vendorStock, setVendorStock } = useVendor();
 
-    useEffect(() => {
-        const apiUrl = 'http://192.168.252.74:8082/planteur/viewPlanteur.php';
-    
-        // Appel à l'API avec Axios
-        axios.get(apiUrl)
-          .then(response => {
-            setData(response.data);
-          })
-          .catch(error => {
-            console.error('Erreur lors de la récupération des données :', error);
-          });
-      }, []);
+  const { productId } = useParams();
+  const [vendeurs, setVendeurs] = useState([]);
 
-    return (
-        <div className="container">
-            <Header/>
-            <div className="bigdiv">
-                <div className="fruit">
-                    <img src={ananas} alt="" />
-                </div>
-                <div className="review" id="Review">
-                <center><div className="tete">
-                <h1 className="heading">NOS <span>VENDEURS</span></h1></div></center>
-                    <div className="review_box" >
-                    {data.map(item=>(
+  useEffect(() => {
+    const apiUrl = `http://localhost:3002/product/${productId}/sellers`;
 
-                    <div className="review_card" key={item.id}>
-                    <div className="review_profile"> <img alt="" /></div>
+    axios.get(apiUrl)
+      .then(response => {
+        setVendeurs(response.data);
+      })
+      .catch(error => {
+        console.error('Erreur lors de la récupération des données des vendeurs :', error);
+      });
+  }, [productId]);
 
-                       
-                    <Link className="lien" to={'/priceDefinition'} >
-  <div className="review_text" key={item}>
-                            <h2 className="name">{item.Nom_planteur}</h2>
-                            <h2 className="name">{item.Pren_planteur}</h2>
-                            <div className="review_icon">
-                                <AiTwotoneStar className="i"/>
-                                <AiTwotoneStar className="i"/>
-                                <AiTwotoneStar className="i"/>
-                                <BiSolidStarHalf className="i" />
-                                <AiOutlineStar className="i" />
-    
-                            </div>
-                            <div className="review_social">
-                                <BsFacebook className="i"/>
-                                <BsWhatsapp className="i"/>
-                                <BiSolidPhone className="i"/>
-    
-                            </div>
-                            <div><p>
-                                <span>REGION: </span>
-                            Lorem <br /><br />
-                            <span>INFOS: </span>
-                             ipsum dolor sit amet consectetur adipisicing elit. Eos, ab quaerat sapiente optio voluptates impedit cum reprehenderit! Quam est perspiciatis ex pariatur temporibus, omnis reprehenderit animi dolorum? Cumque,<br /><span> QUANTITE DISPONIBLE:</span>
-    
-                            </p></div>
-                            
-                        </div></Link>
-                        
-                    </div>                ))}
-  
-                </div>
+  const handleVendorClick = (id_vendor, id_user, nom, phone) => {
+    setVendorInfo({
+      id_vendor,
+      id_user,
+      nom,
+      phone
+    });
+  };
 
-                </div>
-                
-                
+  const handleVendorstockClick = (id_stock, quantity, desription) => {
+    setVendorStock({
+      id_stock,
+      quantity,
+      desription,
+    });
+  };
+
+
+
+  return (
+    <div className="containe">
+      <Header />
+      <div className="bigdiv">
+        {vendeurs.map(vendeur =>(
+            <div className="fruit" key={vendeur.id} >
+            <img src={`${vendeur.image}`} alt="" className="image8"/>
+          </div>
+
+        ))}
+        
+        <div className="review" id="Review">
+          <center>
+            <div className="tete">
+              <h1 className="heading">NOS <span>VENDEURS</span></h1>
             </div>
-            </div>
-    );
+          </center>
+          <div className="review_box">
+            {vendeurs.map(vendeur => (
+              <div className="review_card" key={vendeur.id}>
+                <Link  className="lien1"
+                to={`/add-to-cart/${vendeur.id}`}
+                onClick={() => {
+                  handleVendorClick(vendeur.id, vendeur.id_user, vendeur.nom, vendeur.phone);
+                  handleVendorstockClick(vendeur.id_stock, vendeur.stockQuantity, vendeur.description);
+                }}>
+                <div className="review_profile" >
+                  <img src={`${vendeur.vendor_image}`} />
+                </div>
+                <div className="review_text">
+                  <h2 className="name">{vendeur.nom}</h2>
+                
+                  <div className="review_social">
+                    <BsFacebook className="i" />
+                    <BsWhatsapp className="i" />
+                    <BiSolidPhone className="i" />
+                  </div>
+                  <div>
+                    <p>
+                      <span>STATUT : </span>
+                      {vendeur.status} <br />
+                      <span>DESCRIPTION VENDEUR : </span>
+                      {vendeur.vendorDescription} <br />
+                      <span>QUANTITÉ DISPONIBLE EN STOCK : </span>
+                      {vendeur.stockQuantity} <br />
+                      <span>DESCRIPTION DU STOCK : </span>
+                      {vendeur.stockDescription}
+                    </p>
+                  </div>
+                </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Vendeurs;

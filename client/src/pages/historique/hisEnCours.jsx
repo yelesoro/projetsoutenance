@@ -1,20 +1,20 @@
+
 import Header from "./header/Header";
 import { Link } from "react-router-dom";
 import "./historique.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import {useShop} from '../../contexts/shopContext'
-import { format } from 'date-fns';
+import format from "date-fns/format";
 
-
-const Historique = () => {
+const HisEnCours = () => {
 
   const { shopInfo,setShopInfo } = useShop(); // Obtenez la pfonction setProductInfo depuis le contexte
 
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const apiUrl = "http://localhost:3002/historique";
+    const apiUrl = "http://localhost:3002/enCoursValidation";
 
     axios
       .get(apiUrl)
@@ -27,9 +27,6 @@ const Historique = () => {
   }, []);
   console.log(data)
 
-
-
-
   return (
     <div>
       <Header />
@@ -37,13 +34,13 @@ const Historique = () => {
       <center>
         <div className="header1">
           <nav className="navbar1">
-            <Link to={"/hisEnCours"} className="linkp">
+            <Link to={"/historique"} className="linkp22">
               EnCoursDeValidation
             </Link>
-            <Link className="link" to={"/valide"}>
+            <Link className="link" to={"/historique"}>
               Validées
             </Link>
-            <Link className="link" to={"/livre"}>
+            <Link className="link" to={"/historique"}>
               Livrées
             </Link>
           </nav>
@@ -77,9 +74,9 @@ const Historique = () => {
                             <td>{item.order_number}</td>
                             <td>{item.name} <br /><br /><img src={item.product_image} alt="" className="imgd" /></td>
                             <td>{item.shopping_adress}</td>
-                            <td> Commandé le {format(new Date(item.order_date), 'dd/MM/yyyy')}   à {item.time}</td>
+                            <td>Commandé le {format(new Date(item.order_date), 'dd/MM/yyyy')}   à {item.time}</td>
                             <td>{item.total_order} kg</td>
-                            <td>{item.total_price} frs cfa</td>
+                            <td>{item.price} frs cfa</td>
                             {item.status ? (
                               item.status === "debut" ? (
                                 <td >
@@ -117,4 +114,4 @@ const Historique = () => {
   );
 };
 
-export default Historique;
+export default HisEnCours;

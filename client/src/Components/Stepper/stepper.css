@@ -1,0 +1,124 @@
+:root{
+    --primaryColor: hsl(94, 55%, 56%);
+    --hoverColor: hsl(93, 75%, 76%);
+    --paleGreen: hsl(94, 55%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(113, 11%, 85%);
+    --inputColor: hsl(330, 12%, 97%);
+
+
+    /*Font and typography*/
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1rem;
+    --normalFontSize: .938rem;
+    --smallFontSize: .813rem;
+    --smallestFontSize:.75rem;
+
+
+}
+
+.container{
+    margin:0 ;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items:end;
+    height: 17vh;
+    width: 100vw;
+}
+
+.content{
+    align-items: center;
+    width: 600px;
+    height: 10px;
+    top: 50px;
+}
+
+.progressBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.progressBar::before{
+    content: "";
+    position: absolute;
+    background-color: #e0e0e0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    height: 4px;
+    width: 100%;
+    z-index: -1;transition: 0.4s ease;
+
+}
+.progress{
+    position: absolute;
+    background-color: var(--primaryColor);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    height: 4px;
+    width: 50%;
+    z-index: -1;transition: 0.4s ease;
+
+
+}
+
+.circle{
+     background-color: #fff;
+     color: var(--whiteColor);
+     font-size: 2.5rem;
+     border-radius: 50%;
+     height:30px ;
+     width:30px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border: 20px solid #e0e0e0;
+     transition: 0.4s ease;
+}
+
+.circle.active{
+    border-color: var(--primaryColor);
+}
+.button{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.btn{
+    padding: 5px 20px;
+    font-weight: bold;
+    background-color: green;
+    outline-style: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    border: 0;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.btn.active{
+    transform: scale(0.98);
+}
+
+.btn.focus{
+    outline: none;
+}
+
+.btn:disabled{
+    background-color: #999;
+    cursor: not-allowed;
+
+}

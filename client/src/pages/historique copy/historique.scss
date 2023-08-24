@@ -55,17 +55,10 @@
 .header1 .navbar1 .link22{
     margin-left: 30px;
     background-color: var(--primaryColor);
-    font-size: 1.7rem;
-    border-radius: .5rem;
-    padding: .5rem 1.5rem;
-    color: var(--light-color);
-    color: var(--blackColor);
-    background-color: var(--primaryColor);
-
 }
 
 
-header .navbar1 .link1,.linkp:hover,.link:hover, .link22:hover{
+header .navbar1 .link1,.linkp:hover,.link:hover, .lin{
     color: #fff;
     background: var(--primaryColor);
 
@@ -76,6 +69,7 @@ header .navbar1 .link1,.linkp:hover,.link:hover, .link22:hover{
 
 .table-wrapper {
     overflow: auto;
+    max-height: 500px;
 
     
 }
@@ -113,9 +107,8 @@ tbody > tr:hover {
 
 .btn2{
     border: none;
-    font-size: 12px;
+    font-size: 20px;
     border-radius: 20px;
-    font-weight: bold;
     padding: 5px;
     box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.3);
     height: 35px;
@@ -131,71 +124,4 @@ tbody > tr:hover {
     margin: 5rem;
     border-radius: 20px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
-}
-
-.status1{
-    background-color: #666;
-    border-radius: 20px;
-    height: 3.5rem;
-    text-align: center;
-    align-items: center;
-    padding-top: 1rem;
-    color: var(--whiteColor);
-}
-
-.status2{
-    background-color:rgb(74, 164, 220);
-    border-radius: 20px;
-    height: 3.5rem;
-    text-align: center;
-    align-items: center;
-    padding-top: 1rem;
-    color: var(--whiteColor);
-}
-.status3{
-    background-color: rgb(226, 226, 47);
-    border-radius: 20px;
-    height: 3.5rem;
-    text-align: center;
-    align-items: center;
-    padding-top: 1rem;
-    color: var(--whiteColor);
-}
-
-.status4{
-    background-color: orange;
-    border-radius: 20px;
-    height: 3.5rem;
-    text-align: center;
-    align-items: center;
-    padding-top: 1rem;
-    color: var(--whiteColor);
-}
-
-.status5{
-    background-color: green;
-    border-radius: 20px;
-    height: 3.5rem;
-    text-align: center;
-    align-items: center;
-    padding-top: 1rem;
-    color: var(--whiteColor);
-}
-.imgd{
-    width: 50px;
-    height: 50px;
-    border: var(--blackColor);
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
-
-}
-
-.linkp22{
-    font-size: 1.7rem;
-    border-radius: .5rem;
-    padding: .5rem 1.5rem;
-    color: var(--light-color);
-    margin-left: -80px;
-    color: var(--blackColor);
-    background-color: var(--primaryColor);
 }

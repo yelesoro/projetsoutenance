@@ -13,21 +13,24 @@ import axios from 'axios';
 
 const Register = () => {
     //Usestate to holds the inputs
-    const [email, setEmail] = useState('')
-    const [username, setUsername] = useState('')
+    const [name, setUsername] = useState('')
+    const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
 
 
-    const createUser = ()=>{
-        axios.post('http://localhost:3002/register', {
-            Email: email,
-            UserName: username,
-            Password: password
-        })
-.then(()=>{
-    console.log("L'utilisateur a été créé")
-})
-    }
+    const createUser = async (e) => {
+
+        e.preventDefault();
+
+        const formData = { name, phone, password };
+
+        try {
+            const response = await axios.post('http://localhost:3002/register', formData);
+            console.log(response.data.message);
+        } catch (error) {
+            console.error('Erreur lors de l\'enregistrement des données :', error);
+        }
+         };
 
     return (
         <div className='registerPage flex '>
@@ -53,31 +56,28 @@ const Register = () => {
                     </div>
                     <form action="" className='form grid'>
                        
+                      
                         <div className="inputDiv">
-                            <label htmlFor="email">Mail</label>
-                            <div className="input flex">
-                            <MdEmail className ='icon'/>
-                                <input type="email" id = 'email' placeholder='Entrer votre mail' onChange={(event)=>{
-                                    setEmail(event.target.value)
-                                }} />
-                            </div>
-                        </div><br />
-                        <div className="inputDiv">
-                            <label htmlFor="username">Nom utilisateur</label>
+                            <label htmlFor="name">Nom utilisateur</label>
                             <div className="input flex">
                             <FaUserShield className ='icon'/>
-                                <input type="text" id = 'username' placeholder='Entrer votre nom' onChange={(event)=>{
-                                    setUsername(event.target.value)
-                                }} />
+                                <input type="text" id = 'name' placeholder='Entrer votre nom' value={name} onChange={(e) => setUsername(e.target.value)}/>
                             </div>
                         </div><br />
+
+                        <div className="inputDiv">
+                            <label htmlFor="phone">Phone</label>
+                            <div className="input flex">
+                            <MdEmail className ='icon'/>
+                                <input type="text" id = 'phone' placeholder='Entrer votre telephone' value={phone} onChange={(e) => setPhone(e.target.value)} />
+                            </div>
+                        </div><br />
+
                         <div className="inputDiv">
                             <label htmlFor="password">Mot de passe</label>
                             <div className="input flex">
                             <BsFillShieldLockFill className ='icon'/>
-                                <input type="password" id = 'password' placeholder='Entrer votre mot de passe' onChange={(event)=>{
-                                    setPassword(event.target.value)
-                                }} />
+                                <input type="password" id = 'password' placeholder='Entrer votre mot de passe'value={password} onChange={(e) => setPassword(e.target.value)} />
                             </div>
                         </div><br /><br />
                         

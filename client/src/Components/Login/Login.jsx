@@ -1,56 +1,67 @@
 import { useEffect, useState } from 'react';
 import './Login.scss'
-import video from '../../LoginAssets/video3.mp4'
+import video from '../../LoginAssets/video2.mp4'
 import logo from'../../LoginAssets/logo.png'
-import { Link, useNavigate, } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {FaUserShield} from 'react-icons/fa'
 import {BsFillShieldLockFill} from 'react-icons/bs'
 import {AiOutlineSwapRight} from 'react-icons/ai'
 import '../../App.scss'
 import axios from 'axios';
+import { useUser } from '../../contexts/UserContext';
+import './Login.scss'
 
 
 const Login = () => {
-
-    const [loginUsername, setLoginUserName] = useState('')
-    const [loginPassword, setLoginPassword] = useState('')
+    const { setUser } = useUser();
+    const [name, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
     const navigateTo = useNavigate()
-    const [loginStatus, setLoginStatus] = useState('')
-    const [statusHolder, setstatusHolder] = useState('message')
 
-    const LoginUser = (e)=>{
+    
+
+    const LoginUser = async (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3002/login', {
-            LoginUserName: loginUsername,
-            LoginPassword: loginPassword
-        })
-.then((response)=>{
-    console.log()   
 
-    if (response.data.message || loginUsername=='' || loginPassword ==''){
-        navigateTo('/')
-        setLoginStatus('Le nom ou le mot de passe ne correspond pas')
-    }else{
-        navigateTo('/home')
-    }
-})
-    }
+        try {
+            const response = await axios.post('http://localhost:3002/login', {
+                name: name,
+                password: password
+            });
 
-    useEffect(()=>{
-        if(loginStatus!==''){
-            setstatusHolder('showMessage')
-            setTimeout(()=>{
-                setstatusHolder('message')
+            setMessage(response.data.message);
+            if (response.data.user) {
+                setUser(response.data.user); // Stocke les données de l'utilisateur dans le contexte
+            }
 
-
-            }, 4000);
+        } catch (error) {
+            setMessage('');
+            
+            
+            
         }
-    }, [loginStatus])
+        if (message === 'Connexion réussie'){
+                navigateTo('/home')
+            
+            }else{
+                navigateTo('/')
+            }
+        
+        
+        
+        
+        
+    };
 
-    const onSubmit = ()=>{
-        setLoginUserName('')
-        setLoginPassword('')
-    }
+    useEffect(() => {
+        if (message === 'Échec de la connexion') {
+            setTimeout(() => {
+                setMessage('');
+            }, 3000); // Affiche le message d'erreur pendant 3 secondes
+        }
+    }, [message]);
+
 
     return (
         <div className='loginPage flex '>
@@ -71,17 +82,17 @@ const Login = () => {
 
                 <div className="formDiv flex">
                     <div className="headerDiv">
-                        <img src={logo} alt="logo de Agrobloc" />
+                        <img src={logo} alt="logo de Agrobloc" className='imp' />
                         <h3>Bienvenue</h3>
                     </div>
-                    <form action="" className='form grid' onSubmit={onSubmit}>
-                        <span className={statusHolder}>{loginStatus} </span>
+                    <form action="" className='form grid' onSubmit={LoginUser}>
+                        <span >{message} </span>
                         <div className="inputDiv">
                             <label htmlFor="username">Nom utilisateur</label> 
                             <div className="input flex">
                             <FaUserShield className ='icon'/>
                                 <input type="text" id = 'username' placeholder='Entrer votre nom' onChange={(event)=>{
-                                    setLoginUserName(event.target.value)
+                                    setUsername(event.target.value)
                                 }} />
                             </div>
                         </div><br />
@@ -89,9 +100,8 @@ const Login = () => {
                             <label htmlFor="password">Mot de passe</label>
                             <div className="input flex">
                             <BsFillShieldLockFill className ='icon'/>
-                                <input type="password" id = 'password' placeholder='Entrer votre mot de passe' onChange={(event)=>{
-                                    setLoginPassword(event.target.value)
-                                }} />
+                                <input type="password" id = 'password' placeholder='Entrer votre mot de passe' value={password}
+                    onChange={(e) => setPassword(e.target.value)} />
                             </div>
                         </div><br /><br />
                         

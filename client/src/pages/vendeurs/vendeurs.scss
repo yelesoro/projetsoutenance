@@ -115,8 +115,8 @@ img{
 }
 
 .review .review_box .review_card{
-    width: 450px;
-    height: 390px;
+    width: 311px;
+    height: 430px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     border-radius: 8px;
     padding: 8px 20px;
@@ -129,6 +129,7 @@ img{
     justify-content: center;
     position: relative;
     transition: 0.3s;
+    cursor: pointer;
 
 }
 
@@ -186,12 +187,13 @@ img{
     text-align: center;
     line-height: 18px;
     transition: 0.3s;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .review .review_box .review_card .review_text p span{
     color: var(--primaryColor);
     font-weight: 600;
+    font-size: 14px;
 }
 
 .review .review_box .review_card:hover .review_text p{
@@ -210,7 +212,7 @@ img{
     margin-bottom: 30rem;
     padding: 3rem;
     background-color: var(--paleGreen);
-    border-radius: 50%;
+    border-radius: 20px;
 }
 .fruit:hover{
     background-color: var(--hoverColor);
@@ -234,4 +236,19 @@ img{
     background-color: red;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.image8{
+    border-radius: 20px;
+
+}
+
+.oh{
+    font-weight: 600;
+    color: var(--primaryColor);
+}
+
+.lien1{
+    text-decoration: none;
+    color: black;
 }

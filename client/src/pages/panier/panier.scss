@@ -104,8 +104,9 @@ html{
         .box-container{
             padding: 1.5rem;
             display: flex;
-            flex-wrap: wrap;
-    
+            flex-direction: row;
+            justify-content: space-between; 
+               
             .box{
                 border-radius: .5rem;
                 background: var(--grey);
@@ -134,9 +135,11 @@ html{
                     height: 8rem;
                 }
                 .content{
+                    margin-top: -10rem;
                     h3{
                         font-size: 2rem;
                         color: var(--black);
+                        margin-top: -7.5rem;
                     }
     
                     span{
@@ -259,7 +262,8 @@ html{
         padding: 1.5rem;
 
         .subtotal2{margin-left: 60rem;}
-        .total{margin-top: 3rem;}
+        .total{justify-content: center;
+        align-items: center;}
 
         h3{
             color: var(--blackColor);
@@ -279,5 +283,74 @@ html{
 }
 
 
+.btn21{
+    display:inline-block ;
+    margin-top: 1rem;
+    padding: .7rem 1.8rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: white;
+    background: var(--primaryColor);
+    border-radius: .5rem;
 
+    &:hover{
+        background:var(--black) ;
+    }
+}
 
+.btn22{
+    display:inline-block ;
+    margin-top: 1rem;
+    padding: .7rem 1.8rem;
+    font-size: 1.7rem;
+    margin-left: 25rem;
+    cursor: pointer;
+    color: white;
+    background: var(--primaryColor);
+    border-radius: .5rem;
+
+    &:hover{
+        background:var(--black) ;
+    }
+}
+
+.total2{
+    margin-left: 15rem;
+
+}
+.total1{
+    margin-right: 5rem;
+    width: 15rem;
+    background-color: #192a56;
+}
+
+.h1{
+    font-size: 2rem;
+    margin-right: 5rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-top: 2rem;
+}
+.form1{
+    display: flex;
+
+}
+input{
+    margin-left: 5rem;
+}
+
+.btn212{
+    display:inline-block ;
+    margin-top: 1rem;
+    padding: .7rem 1.8rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: white;
+    background: var(--primaryColor);
+    border-radius: .5rem;
+    margin-left: 20rem;
+
+    &:hover{
+        background:var(--black) ;
+    }
+}

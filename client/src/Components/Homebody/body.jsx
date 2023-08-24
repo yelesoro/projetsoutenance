@@ -12,7 +12,7 @@ import './body.scss'
 
 const Body = () => {
     return (
-        <div>
+        <div className="div5">
             <br /><br /><br /><br />
            <center><Top/></center><br /><br />
            <center><div className="h3"><h3>NOS <span>SERVICES </span></h3></div></center>
