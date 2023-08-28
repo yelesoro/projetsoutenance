@@ -21,6 +21,7 @@ const Historique = () => {
           console.error('Erreur lors de la récupération des produits :', error);
         });
     }, []);
+    
   
     return (
         <div>

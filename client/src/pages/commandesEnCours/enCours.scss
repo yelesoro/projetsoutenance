@@ -135,3 +135,27 @@
     cursor: pointer;
 
 }
+
+.div12{
+    display: flex;
+    
+}
+
+
+.btnn1{
+    width: 10rem;
+    height: 50px;
+    margin: 5rem;
+    background-color: var(--paleGreen);
+    color: var(--blackColor);
+    padding: .5rem;
+}
+
+.btnn1:hover{
+    width: 10rem;
+    height: 50px;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    cursor: pointer;
+
+}

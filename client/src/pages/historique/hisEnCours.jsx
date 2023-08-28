@@ -37,10 +37,10 @@ const HisEnCours = () => {
             <Link to={"/historique"} className="linkp22">
               EnCoursDeValidation
             </Link>
-            <Link className="link" to={"/historique"}>
+            <Link className="link" to={"/valide"}>
               Validées
             </Link>
-            <Link className="link" to={"/historique"}>
+            <Link className="link" to={"/livre"}>
               Livrées
             </Link>
           </nav>

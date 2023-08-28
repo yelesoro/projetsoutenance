@@ -18,6 +18,7 @@ import HisEnCours from './pages/historique/hisEnCours'
 import Validé from './pages/historique/Validé'
 import Livre from './pages/historique/livre'
 import DebutPaiement from './pages/debutPaiement/DebutPaiement'
+import ShopDetails from './pages/details/ShopDetails'
 
 
 
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
   {
     path: '/debutpaiement',
     element: <div><DebutPaiement/></div>
+  },
+  {
+    path: '/ordersdetails/:id_order',
+    element: <div><ShopDetails/></div>
   },
 
 

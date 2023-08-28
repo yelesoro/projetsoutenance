@@ -345,6 +345,69 @@ app.get('/commandes/:shopId', (req, res) => {
 
 
 
+// Route pour exécuter la requête SQL et insérer les données
+app.get('/api/insert', (req, res) => {
+  const query = `
+  INSERT INTO order_line (id_vendor, id_order, quantity, price)
+  SELECT
+      id_vendor,
+      (SELECT id_order FROM shop_order ORDER BY id_order DESC LIMIT 1) AS id_order,
+      quantity,
+      total_shop AS price
+  FROM
+      shopping_cart
+  JOIN
+      shopping_cart_item ON shopping_cart_item.id_cart = shopping_cart.id_cart
+  WHERE
+      shopping_cart.id_cart = (SELECT id_cart FROM shopping_cart ORDER BY id_cart DESC LIMIT 1);
+  
+  `;
+
+  db.query(query, (err, result) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: 'An error occurred' });
+    } else {
+      res.json({ message: 'Data inserted successfully' });
+    }
+  });
+});
+
+
+app.get('/ordersdetails/:id_order', (req, res) => {
+  const idOrder = req.params.id_order;
+
+  const sql = `
+  SELECT * FROM shop_order, order_line, vendor, user WHERE shop_order.id_order = order_line.id_order AND order_line.id_vendor = vendor.id_vendor AND user.id_user = vendor.id_user AND shop_order.id_order = ?;
+  `;
+
+  db.query(sql, [idOrder], (err, results) => {
+    if (err) {
+      res.status(500).json({ error: 'Erreur lors de l\'exécution de la requête SQL' });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+app.get('/shopdetails/:id_order', (req, res) => {
+  const idOrder = req.params.id_order;
+
+  const sql = `
+  SELECT * FROM shop_order, product WHERE shop_order.id_product = product.id_product AND shop_order.id_order = ? ;
+  `;
+
+  db.query(sql, [idOrder], (err, results) => {
+    if (err) {
+      res.status(500).json({ error: 'Erreur lors de l\'exécution de la requête SQL' });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+
+
 
 //ADMIN
 
@@ -505,6 +568,24 @@ app.put("/update-status5/:orderId", (req, res) => {
       res.status(500).json({ message: "Erreur lors de la mise à jour du statut" });
     } else {
       res.status(200).json({ message: "Statut mis à jour avec succès" });
+    }
+  });
+});
+
+
+app.get('/totalshop', (req, res) => {
+  const sql = `
+  SELECT *
+  FROM shop_order, product WHERE shop_order.id_product = product.id_product
+  ORDER BY id_order DESC;
+  `;
+  
+  db.query(sql, (err, results) => {
+    if (err) {
+      res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+      console.log (results)
+    } else {
+      res.json(results);
     }
   });
 });

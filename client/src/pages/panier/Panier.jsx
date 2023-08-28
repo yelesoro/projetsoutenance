@@ -1,13 +1,13 @@
 import Header from "../vendeurs/header/Header";
-import cacao from "../../ImageProduits/caco.png";
 import { FaTimes } from "react-icons/fa";
 import "./panier.scss";
 import { Link } from "react-router-dom";
 import { useUser } from "../../contexts/UserContext";
 import { useProduct } from "../../contexts/ProductContext";
-import { useVendor } from "../../contexts/VendorContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Panier = () => {
   //user
@@ -17,13 +17,10 @@ const Panier = () => {
   const { productInfo } = useProduct();
   const productId = productInfo.id;
   const productName = productInfo.name;
-  const productPrice = productInfo.price;
-  const productImage = productInfo.image;
   const [shoppingCart, setShoppingCart] = useState([]);
 
   const [total_order, setTotalOrder] = useState(0);
   const [total_price, setTotalPrice] = useState(0);
-
 
   useEffect(() => {
     const apiUrl = "http://localhost:3002/shopping-cart";
@@ -48,7 +45,7 @@ const Panier = () => {
       .then((response) => {
         setTotalCart(response.data);
         setTotalOrder(response.data[0].total_poids);
-        setTotalPrice(response.data[0].total_vente)
+        setTotalPrice(response.data[0].total_vente);
       })
       .catch((error) => {
         console.error("Erreur lors de la récupération des produits :", error);
@@ -63,10 +60,10 @@ const Panier = () => {
 
     try {
       const response = await axios.post("http://localhost:3002/commande", {
-        id_user : userid,
-        id_product : productId,
+        id_user: userid,
+        id_product: productId,
         shopping_adress: shoppingAdress,
-        total_order, 
+        total_order,
         total_price,
         description: description,
       });
@@ -80,6 +77,28 @@ const Panier = () => {
     }
   };
 
+  const handleButtonClicks = () => {
+    toast.success("Commande validée avec succès", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
+
+  const handleInsertData = () => {
+    axios.get('http://localhost:3002/api/insert')
+      .then(response => {
+        console.log(response.data); // Affiche la réponse de l'API dans la console
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  };
   return (
     <div>
       <Header />
@@ -127,33 +146,37 @@ const Panier = () => {
             </center>
             <div className="box-container">
               <div className="box">
-                <form >
+                <form>
                   {/* Input fields for shopping_adress and description */}
                   <div className="form1">
-                  <label htmlFor="" className="h1">Adresse de livraison</label>
-                  <input
-                  className="btn1"
-                    type="text"
-                    value={shoppingAdress}
-                    onChange={(e) => setShoppingAdress(e.target.value)}
-                    placeholder="Adresse de livraison"
-                  />
-                    </div><br /><br />
+                    <label htmlFor="" className="h1">
+                      Adresse de livraison
+                    </label>
+                    <input
+                      className="btn1"
+                      type="text"
+                      value={shoppingAdress}
+                      onChange={(e) => setShoppingAdress(e.target.value)}
+                      placeholder="Adresse de livraison"
+                    />
+                  </div>
+                  <br />
+                  <br />
                   <div className="form1">
-                  <label htmlFor="" className="h1">Détails sur la livraison</label>
-                  <textarea
-                  rows={4}
-                  cols={50}
-                  className="btn1"
-                    type="text"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    placeholder="Description de la commande"
-                  />
-
-                    </div>
+                    <label htmlFor="" className="h1">
+                      Détails sur la livraison
+                    </label>
+                    <textarea
+                      rows={4}
+                      cols={50}
+                      className="btn1"
+                      type="text"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      placeholder="Description de la commande"
+                    />
+                  </div>
                   {/* Submit button */}
-                  
                 </form>
               </div>
             </div>
@@ -174,11 +197,30 @@ const Panier = () => {
                   total des achats : <span>{item.total_vente} frcs cfa</span>
                 </h3>
                 <center>
-                  <Link to={"/hisEnCours"} className="btn21" onClick={handleSubmit}>
-                    Valider la commande
+                  <Link className="btn21" onClick={handleSubmit}>
+                    <button onClick={handleButtonClicks} className="bout1">
+                      Valider la commande
+                    </button>
                   </Link>
-                  <Link className="btn22" to={"/produits"}>
+                  <Link to={'/historique'} onClick={handleInsertData} className="btn24">
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
+                    </Link>
+                  <Link className="btn22" >
+                    <button className="bout1" >
                     Annuler la commande
+                    </button>
+                    
                   </Link>
                 </center>
               </div>

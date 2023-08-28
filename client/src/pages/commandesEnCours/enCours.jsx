@@ -99,8 +99,11 @@ const EnCours = () => {
               <br /><br />
               <p>
                 Jour de commande :<span> {format(new Date(detail.order_date), 'dd/MM/yyyy')}   à {detail.time} </span>
-              </p>
-              <br />
+              </p><br /><br />
+              <center>
+              <p><Link to={`/ordersdetails/${detail.id_order}`}><button className="btnn1">Voir plus</button></Link></p>
+              </center>
+                          
             </div>
           </div>
           </div>
@@ -138,7 +141,14 @@ const EnCours = () => {
               <p>
                 Jour de commande :<span> {format(new Date(detail.order_date), 'dd/MM/yyyy')}   à {detail.time} </span>
               </p>
-              <br />
+              <div className="div12">
+              <center>
+              <p><Link to={`/ordersdetails/${detail.id_order}`}><button className="btnn1">Voir plus</button></Link></p>
+              </center>
+              <center>
+              <p><button className="btnn1">Procéder au paiement </button></p>
+              </center>
+              </div>
             </div>
           </div>
           </div>
@@ -175,8 +185,10 @@ const EnCours = () => {
               <br /><br />
               <p>
                 Jour de commande :<span> {format(new Date(detail.order_date), 'dd/MM/yyyy')}   à {detail.time} </span>
-              </p>
-              <br />
+              </p><br /><br />
+              <center>
+              <p><Link to={`/ordersdetails/${detail.id_order}`}><button className="btnn1">Voir plus</button></Link></p>
+              </center>
             </div>
           </div>
           </div>
@@ -213,8 +225,10 @@ const EnCours = () => {
               <br /><br />
               <p>
                 Jour de commande :<span> {format(new Date(detail.order_date), 'dd/MM/yyyy')}   à {detail.time} </span>
-              </p>
-              <br />
+              </p><br /><br />
+              <center>
+              <p><Link to={`/ordersdetails/${detail.id_order}`}><button className="btnn1">Voir plus</button></Link></p>
+              </center>
             </div>
           </div>
           </div>
@@ -253,7 +267,16 @@ const EnCours = () => {
               <p>
                 Jour de commande :<span> {format(new Date(detail.order_date), 'dd/MM/yyyy')}   à {detail.time} </span>
               </p>
-              <br />
+              <div className="div12">
+              <center>
+              <p><Link to={`/ordersdetails/${detail.id_order}`}><button className="btnn1">Voir plus</button></Link></p>
+              </center>
+              <center>
+              <p><button className="btnn1">Procéder au paiement </button></p>
+              </center>
+              </div>
+              
+
             </div>
             
           </div>

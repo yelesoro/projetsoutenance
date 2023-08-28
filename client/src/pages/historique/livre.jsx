@@ -42,7 +42,7 @@ const Livre = () => {
             <Link className="link" to={"/valide"}>
               Validées
             </Link>
-            <Link className="link22" to={"/livre"}>
+            <Link className="link22" to={"/historique"}>
               Livrées
             </Link>
           </nav>

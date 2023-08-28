@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+     
+}
+
+/*let set our default styling */
+:root{
+    --primaryColor: hsl(94, 55%, 56%);
+    --hoverColor: hsl(93, 75%, 76%);
+    --paleGreen: hsl(94, 55%, 89%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --greyText: hsl(0, 0%, 75%);
+    --bgColor: hsl(113, 11%, 85%);
+    --inputColor: hsl(330, 12%, 97%);
+
+
+    /*Font and typography*/
+    --biggestFontSize: 2.5rem;
+    --h1FontSize: 1.5rem;
+    --h2FontSize: 1rem;
+    --normalFontSize: .938rem;
+    --smallFontSize: .813rem;
+    --smallestFontSize:.75rem;
+
+
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+
+.tete{
+    width: 300px;
+}
+
+.review3{
+    margin-top: -5rem;
+    margin-left: 5rem; margin-right: 5rem;
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+}
+
+.review3 .heading{
+    font-size: 3rem;
+}
+
+
+
+.review3 .heading span{
+    color: var(--primaryColor);
+}
+
+
+.review3 h1{
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.review3 h1 span{
+    margin-left: 15px;
+    columns: var(--primaryColor);
+    
+}
+
+.review3 h1 span ::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: var(--primaryColor);
+    position: relative;
+    bottom: 15px;
+    display: block;
+
+}
+
+.review3 .review_box3{
+    width: 100%;
+    margin: 70px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.review3 .review_box3>div{
+    display: inline-block;
+}
+
+.review3 .review_box3 .review_card3{
+    width: 350px;
+    height: 390px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    padding: 8px 20px;
+    margin:0 8px ;
+}
+
+.review3 .review_box3 .review_card3 .review_profile{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    position: relative;
+    transition: 0.3s;
+
+}
+
+.review3 .review_box3 .review_card3 .review_text{
+    text-align: center;
+}
+.review3 .review_box3 .review_card23 .review_text{
+    text-align: center;
+}
+
+.review3 .review_box3 .review_card3 .review_text .name{
+    font-size: 25px;
+}
+
+
+
+.review3 .review_box3 .review_card3 .review_text .review_icon{
+    color: var(--primaryColor);
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+
+.review3 .review_box3 .review_card3 .review_text .review_social .i{
+    margin: 5px 1px;
+    font-size: 15px;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+.review3 .review_box3 .review_card3 .review_text p{
+    text-align: center;
+    line-height: 18px;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.review3 .review_box3 .review_card3 .review_text p span, .review_card23 .review_text p span{
+    color: var(--primaryColor);
+    font-weight: 600;
+}
+
+.bigdiv{
+    display: flex;
+    flex-direction: row;
+    margin-top: -5rem;
+}
+
+.fruit{
+    position: fixed;
+    margin-left: 3rem;
+    margin-top: 30rem;
+    margin-bottom: 30rem;
+    padding: 3rem;
+    background-color: var(--paleGreen);
+    border-radius: 50%;
+}
+
+.fruit img{
+    width: 15rem;
+    height: 15rem;
+}
+
+.lien{
+    text-decoration: none;
+    color: black;
+}
+
+.divpla{
+    width: 95%;
+    margin: 70px;
+    display: flex;
+    background-color: red;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.boutto{
+    padding: .5rem;
+    background: var(--primaryColor);
+    border: none ;
+    box-shadow: 2px 2px 8px rgba(161, 230, 147, 0.5);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.boutton:hover{
+    background: var(--second-color-green);
+    border: none ;
+    font-size: 15px;
+    color: white;
+}
+
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .popup-content h2 {
+    margin-top: 0;
+    font-size: 25px;
+
+  }
+  
+  .popup-content button {
+    margin-top: 10px;
+  }
+
+  .popup-content p{
+    font-size: 15px;
+
+  }
+
+  .i{
+    margin: 3px 1px;
+    font-size: 15px;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.cont{
+    margin-top: 8rem;
+    margin-left: 5rem;
+}
+
+
+.review3 .review_box3 .review_card23{
+    width: 100%;
+    height: 200px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    border-radius: 2px;
+    padding: 8px 20px;
+    margin:0 8px ;
+    margin-right: 38%;
+    margin-left: 38%;
+    margin-top: -10rem;
+    margin-bottom: 3rem;
+}
+
+.review3 .review_box3 .review_card3 .review_profile{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    position: relative;
+    transition: 0.3s;
+
+}
+
+.review3 .review_box3 .review_card23 .review_text{
+    text-align: center;
+}
+.review3 .review_box3 .review_card23 .review_text{
+    text-align: center;
+}
+
+.review3 .review_box3 .review_card23 .review_text .name{
+    font-size: 25px;
+}
+
+
+
+.review3 .review_box3 .review_card23 .review_text .review_icon{
+    color: var(--primaryColor);
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+
+.review3 .review_box3 .review_card23 .review_text .review_social .i{
+    margin: 5px 1px;
+    font-size: 15px;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+.review3 .review_box3 .review_card23 .review_text p{
+    text-align: center;
+    line-height: 18px;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+
+.im{
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid var(--primaryColor);
+    border-radius: 20px;
+}
